@@ -6,3 +6,4 @@ class Student:
         self.Fnote = fnote
 def MENU():
     print("Menu de estudiantes")
+    print("1.")
