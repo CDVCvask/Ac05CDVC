@@ -39,6 +39,7 @@ try:
                     else:
                         student = Student(name,id,carrer,fnote)
                         students.append(student)
+                        check = 1
             case 2:
                 if check == 0:
                     print("Aún no se a ingresado ningún estudiante")
