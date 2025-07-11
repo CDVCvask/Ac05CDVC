@@ -23,12 +23,22 @@ try:
         opt = int(input("Seleccione la opcion que desee: "))
         match opt:
             case 1:
+                repeat = 0
                 name = input("Ingrese el nombre del estudiante: ")
-                id = long(input("Ingrese el carnet del estudiante: "))
-                carrer = input("Ingrese la carrera del estudiante: ")
-                fnote = int(input("Ingrese la nota final del estudiante: "))
-                student = Student(name,id,carrer,fnote)
-                students.append(student)
+                id = input("Ingrese el carnet del estudiante: ")
+                for student in students:
+                    if id == student.ID:
+                        repeat = 1
+                if repeat == 1:
+                    print("Ese numero de carnet ya existe, no se pueden repetir")
+                else:
+                    carrer = input("Ingrese la carrera del estudiante: ")
+                    fnote = int(input("Ingrese la nota final del estudiante: "))
+                    if fnote <0 or fnote > 100:
+                        print("El valor ingresado no es valido")
+                    else:
+                        student = Student(name,id,carrer,fnote)
+                        students.append(student)
             case 2:
                 if check == 0:
                     print("Aún no se a ingresado ningún estudiante")
@@ -40,7 +50,7 @@ try:
                 if check == 0:
                     print("Aún no se a ingresado ningún estudiante")
                 else:
-                    look = long(input("Ingrese el carnet del estudiante que desea encontrar:"))
+                    look = input("Ingrese el carnet del estudiante que desea encontrar:")
                     for student in students:
                         if student.ID == look:
                             find = True
