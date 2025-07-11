@@ -67,9 +67,10 @@ try:
                 if check == 0:
                     print("Aún no se a ingresado ningún estudiante")
                 else:
+                    total = len(students)
                     for student in students:
                         avarage = avarage + student.Fnote
-                    Tavarage = avarage / students.count()
+                    Tavarage = avarage / total
                     print(f"El promedio de todos los estudiantes es: {Tavarage}")
             case 5:
                 print("Gracias por utilizar el programa")
